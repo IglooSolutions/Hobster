@@ -21,9 +21,9 @@ const LandingScreen: React.FC = () => {
         </div>
       </center>
       <div className="corner top-left landing-page-logo">
-        <Link href="#" className="image-glow">
+        <a href="" className="image-glow">
           <img src="/image/logo.svg" alt="logo" />
-        </Link>
+        </a>
       </div>
       <div className="corner bottom-left landing-page-content">
         <a href="#" className="landing-page-link glow">
