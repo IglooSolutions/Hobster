@@ -100,6 +100,12 @@
   opacity: 0;
 }
 
+.connect-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .text-blue {
   color: #0071bc;
 }
@@ -141,13 +147,6 @@
   height: auto;
 }
 
-.landingContent {
-  font-size: 36px;
-  color: white;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-  margin-top: 20px;
-}
-
 .start-background,
 .landing-background {
   opacity: 1;
@@ -164,5 +163,101 @@
 
 .show-landing .landing-background .landing-page-text {
   animation: fadeInText 2s forwards;
+  animation-delay: 1s;
+}
+.image-glow {
+  filter: none;
+  transition: filter 0.5s ease-in-out;
+}
+
+.image-glow:hover {
+  filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.8))
+    drop-shadow(0 0 16px rgba(255, 255, 255, 0.6))
+    drop-shadow(0 0 32px rgba(255, 255, 255, 0.4));
+}
+.glow {
+  font-size: 24px;
+  transition: text-shadow 0.3s ease-in-out;
+}
+
+.glow:hover {
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.8),
+    0 0 16px rgba(255, 255, 255, 0.6), 0 0 32px rgba(255, 255, 255, 0.4);
+}
+
+.landing-page-link {
+  color: white;
+  text-decoration: none;
+  font-size: 20px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+.landing-page-content {
+  opacity: 0;
+}
+.landing-page-logo {
+  width: 100px;
+  height: auto;
+  opacity: 0;
+}
+.landing-page-content {
+  animation: fadeInText 2s forwards;
   animation-delay: 2s;
+}
+.landing-page-logo {
+  animation: fadeInText 2s forwards;
+  animation-delay: 2s;
+}
+
+.corner {
+  position: absolute;
+  padding: 10px;
+}
+
+.top-left {
+  top: 5%;
+  left: 5%;
+}
+
+.top-right {
+  top: 5%;
+  right: 5%;
+}
+
+.bottom-left {
+  bottom: 5%;
+  left: 5%;
+}
+
+.bottom-right {
+  bottom: 5%;
+  right: 5%;
+}
+
+.game-logo {
+  width: 100px;
+  padding: 10px;
+  transition: transform 0.5s ease-in-out;
+}
+
+.game-logo:hover {
+  transform: scale(1.3);
+}
+
+.btn {
+  background-color: white;
+  color: black;
+  border-radius: 50px;
+  text-decoration: none;
+  transition: background-color 0.3s ease-in-out;
+  display: inline-block;
+  padding: 5px 30px;
+  box-shadow: 0px -4px 6px rgba(0, 0, 0, 0.5) inset;
+}
+
+.btn:hover {
+  transition: filter 0.5s ease-in-out;
+  filter: drop-shadow(0 0 2px rgba(255, 255, 255, 0.8))
+    drop-shadow(0 0 6px rgba(255, 255, 255, 0.6))
+    drop-shadow(0 0 8px rgba(255, 255, 255, 0.4));
 }
