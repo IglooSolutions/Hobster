@@ -87,8 +87,28 @@
   position: absolute;
   top: 0;
   left: 0;
-  opacity: 0;
-  transition: opacity 5s ease;
+  opacity: 1;
+  transition: opacity 2s ease;
+}
+@media (min-width: 767px) {
+  .d-none {
+    display: none;
+  }
+}
+@media (max-width: 767px) {
+  .landing-background {
+    background: url("/image/mobile-background.png") no-repeat center
+      center/cover;
+  }
+  .landing-page-text {
+    font-size: 60px !important;
+  }
+  .d-mb-none {
+    display: none;
+  }
+  .landing-page-logo img {
+    height: 100px;
+  }
 }
 
 .landing-page-text {
@@ -214,6 +234,10 @@
   padding: 10px;
 }
 
+.position-absolute {
+  position: absolute;
+}
+
 .top-left {
   top: 5%;
   left: 5%;
@@ -222,6 +246,11 @@
 .top-right {
   top: 5%;
   right: 5%;
+}
+
+.top-center {
+  top: 5%;
+  align-items: center;
 }
 
 .bottom-left {
@@ -256,6 +285,8 @@
 }
 
 .btn:hover {
+  background-color: white;
+  color: black;
   transition: filter 0.5s ease-in-out;
   filter: drop-shadow(0 0 2px rgba(255, 255, 255, 0.8))
     drop-shadow(0 0 6px rgba(255, 255, 255, 0.6))
