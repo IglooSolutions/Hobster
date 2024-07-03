@@ -1,54 +1,10 @@
-/* styles.css */
-
-* {
-  font-family: "Prompt";
-}
 .container {
   width: 100%;
   height: 100vh;
   overflow: hidden;
   position: relative;
-  font-family: Arial, sans-serif;
-}
-
-.landing {
-  background: url("/image/background.png") no-repeat center center/cover;
-  width: 100%;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-
-.click-start {
-  background: url("/image/background.png") no-repeat center center/cover;
-  width: 100%;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-
-.gameName {
-  font-size: 72px;
-  color: white;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-}
-
-.clickToStart {
-  font-size: 24px;
-  color: white;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-  cursor: pointer;
-  animation: blink 1.2s infinite;
+  font-family: Prompt, sans-serif;
+  transition: white 5s ease;
 }
 
 @keyframes blink {
@@ -63,16 +19,104 @@
   }
 }
 
-.mascotSection {
-  background: url("/background.jpg") no-repeat center center/cover;
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes fadeInText {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.start-background,
+.landing-background {
+  opacity: 1;
+  animation-fill-mode: forwards;
+}
+
+.show-landing .start-background {
+  animation: fadeOut 2s forwards;
+}
+
+.show-landing .landing-background {
+  animation: fadeIn 2s forwards;
+}
+
+.start-background {
+  background: url("/image/background.png") no-repeat center center/cover;
   width: 100%;
   height: 100vh;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   position: absolute;
   top: 0;
   left: 0;
+  opacity: 1;
+  transition: opacity 2s ease;
+}
+
+.landing-background {
+  background: url("/image/background-with-mascot.png") no-repeat center
+    center/cover;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: opacity 5s ease;
+}
+
+.landing-page-text {
+  text-align: center;
+  font-weight: bold;
+  font-size: 95px;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  opacity: 0;
+}
+
+.text-blue {
+  color: #0071bc;
+}
+
+.gameName {
+  font-size: 95px;
+  font-weight: bold;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);
+}
+
+.clickToStart {
+  font-size: 24px;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  cursor: pointer;
+  animation: blink 1.2s infinite;
 }
 
 .overlay {
@@ -102,4 +146,23 @@
   color: white;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
   margin-top: 20px;
+}
+
+.start-background,
+.landing-background {
+  opacity: 1;
+  animation-fill-mode: forwards;
+}
+
+.show-landing .start-background {
+  animation: fadeOut 2s forwards;
+}
+
+.show-landing .landing-background {
+  animation: fadeIn 2s forwards;
+}
+
+.show-landing .landing-background .landing-page-text {
+  animation: fadeInText 2s forwards;
+  animation-delay: 2s;
 }

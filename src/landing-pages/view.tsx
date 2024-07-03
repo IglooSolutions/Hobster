@@ -4,7 +4,7 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import "./styles.css";
 
-const Home: React.FC = () => {
+const LandingPage: React.FC = () => {
   const [showLandingPage, setshowLandingPage] = useState(false);
 
   const handleClick = () => {
@@ -12,11 +12,11 @@ const Home: React.FC = () => {
   };
 
   return (
-    <div className="container">
+    <div className={`container ${showLandingPage ? "show-landing" : ""}`}>
       <AnimatePresence>
         {!showLandingPage && (
           <motion.div
-            className="landing"
+            className="start-background"
             initial={{ opacity: 1 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -30,21 +30,16 @@ const Home: React.FC = () => {
         )}
         {showLandingPage && (
           <motion.div
-            className="landing"
+            className="landing-background"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            transition={{ duration: 1 }}
+            transition={{ duration: 2 }}
           >
-            <motion.img
-              src="image/mascots.png"
-              alt="Mascot"
-              className="mascot"
-              initial={{ y: "100vh" }}
-              animate={{ y: 0 }}
-              transition={{ duration: 1, type: "spring", stiffness: 100 }}
-            />
-            <div className="landingContent">Hello Landing Page</div>
+            <div className="landing-page-text text-center">
+              We Don`t Jump <br />
+              We <span className="text-blue">Hops!</span>
+            </div>
           </motion.div>
         )}
       </AnimatePresence>
@@ -52,4 +47,4 @@ const Home: React.FC = () => {
   );
 };
 
-export default Home;
+export default LandingPage;
