@@ -56,16 +56,23 @@ const LandingScreen: React.FC = () => {
       </div>
       {/* Start Mobile Section */}
       <div className="d-xl-none">
-        <div className="position-absolute  landing-page-logo">
-          <div className="row">
-            <a href="#" className="landing-page-link glow col-4">
+        <div
+          className="d-flex justify-content-center align-items-center position-absolute"
+          style={{
+            top: "10%",
+            left: "50%",
+            transform: "translate(-50%, -50%)",
+          }}
+        >
+          <div className="row landing-page-content">
+            <a href="#" className="landing-page-link glow col">
               Hops Story
             </a>
-            <a href="" className="image-glow col-4">
+            <a href="" className="image-glow landing-page-logo col">
               <img src="/image/logo.svg" alt="logo" />
             </a>
             <a
-              className="landing-page-link landing-page-content glow col-4"
+              className="landing-page-link glow col"
               href="https://docs.google.com/document/d/12flB-zl8DdPh-oXwoK9UIz9oSY6eOK42bqt92Tnn7Y0/edit?usp=sharing"
               target="_blank"
             >
@@ -73,8 +80,7 @@ const LandingScreen: React.FC = () => {
             </a>
           </div>
         </div>
-        <div className="corner bottom-left landing-page-content"></div>
-        <div className="corner bottom-right landing-page-content">
+        <div className="row corner bottom-right landing-page-content">
           <img
             src="/image/hops-world.svg"
             alt="hops-world"
@@ -86,7 +92,6 @@ const LandingScreen: React.FC = () => {
             className="game-logo image-glow landing-page-content"
           />
         </div>
-        <div className="corner top-right landing-page-content"></div>
       </div>
     </motion.div>
   );

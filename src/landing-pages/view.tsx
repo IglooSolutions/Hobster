@@ -16,7 +16,7 @@ const Main: React.FC = () => {
   const gameName = "Hops";
 
   return (
-    <div className={`container ${showLandingPage ? "show-landing" : ""}`}>
+    <div className={`container-fluid ${showLandingPage ? "show-landing" : ""}`}>
       <AnimatePresence>
         {!showLandingPage && (
           <StartScreen gameName={gameName} onClick={handleClick} />
