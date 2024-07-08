@@ -1,8 +1,16 @@
-import React from "react";
-import Link from "next/link";
+// pages/index.tsx
+
+import React, { useState } from "react";
 import { motion } from "framer-motion";
+import HopsStoryModal from "./Story/View";
+import Image from "next/image";
 
 const LandingScreen: React.FC = () => {
+  const [showModal, setShowModal] = useState(false);
+
+  const handleShowModal = () => setShowModal(true);
+  const handleCloseModal = () => setShowModal(false);
+
   return (
     <motion.div
       className="landing-background"
@@ -13,8 +21,8 @@ const LandingScreen: React.FC = () => {
     >
       <center>
         <div className="landing-page-text mt-xl-5">
-          Don`t Jump <br />
-          We <span className="text-blue">Hops!</span>
+          DON`T JUMP <br />
+          WE <span className="text-blue">HOPS!</span>
         </div>
         <div className="btn landing-page-content mt-xl-2">
           <a href="">Connect World</a>
@@ -28,7 +36,11 @@ const LandingScreen: React.FC = () => {
           </a>
         </div>
         <div className="corner bottom-left landing-page-content">
-          <a href="#" className="landing-page-link glow">
+          <a
+            href="#"
+            className="landing-page-link glow"
+            onClick={handleShowModal}
+          >
             Hops Story
           </a>
           <br />
@@ -65,11 +77,15 @@ const LandingScreen: React.FC = () => {
           }}
         >
           <div className="row landing-page-content">
-            <a href="#" className="landing-page-link glow col">
+            <a
+              href=""
+              className="landing-page-link glow col"
+              onClick={handleShowModal}
+            >
               Hops Story
             </a>
             <a href="" className="image-glow landing-page-logo col">
-              <img src="/image/logo.svg" alt="logo" />
+              <Image layout="fill" src="/image/logo.svg" alt="logo" />
             </a>
             <a
               className="landing-page-link glow col"
@@ -81,18 +97,21 @@ const LandingScreen: React.FC = () => {
           </div>
         </div>
         <div className="row corner bottom-right landing-page-content">
-          <img
+          <Image
+            layout="fill"
             src="/image/hops-world.svg"
             alt="hops-world"
             className="game-logo image-glow"
           />
-          <img
+          <Image
+            layout="fill"
             src="/image/hops-play.svg"
             alt="hops-play"
             className="game-logo image-glow landing-page-content"
           />
         </div>
       </div>
+      <HopsStoryModal show={showModal} handleClose={handleCloseModal} />
     </motion.div>
   );
 };
