@@ -1,26 +1,23 @@
 .modal-content {
-  background-color: rgba(
-    0,
-    0,
-    0,
-    0.8
-  ); /* Background color black with opacity */
-  color: white; /* Font color white */
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
 }
 
 .modal-title {
-  color: white; /* Font color white for modal title */
+  size: 36px !important;
+  color: white;
+  font-weight: bold;
 }
 
 .accordion-button {
-  background-color: black; /* Background color black for accordion button */
-  font-weight: bold; /* Make accordion headers (chapters) bold */
-  color: white; /* Font color white for accordion button */
+  background-color: black;
+  font-weight: bold;
+  color: white;
 }
 
 .accordion-button::after {
-  font-weight: bold; /* Make accordion headers (chapters) bold */
-  color: white; /* Font color white for accordion button */
+  font-weight: bold;
+  color: white;
 }
 
 .accordion-button::after {
@@ -31,12 +28,12 @@
 }
 
 .accordion-body {
-  background-color: black; /* Background color black for accordion body */
-  color: white; /* Font color white for accordion body */
+  background-color: black;
+  color: white;
   border: 0px;
 }
 .accordion-item {
-  border: none; /* Remove border from accordion items */
+  border: none;
 }
 .accordion-button:not(.collapsed) {
   background-color: #333;
@@ -44,5 +41,15 @@
 }
 
 .modal-body {
-  color: white; /* Font color white for modal body */
+  color: white;
+}
+
+::selection {
+  color: white;
+  background: purple;
+}
+
+.accordion-button:focus {
+  box-shadow: none;
+  outline: none;
 }

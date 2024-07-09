@@ -32,7 +32,7 @@ const LandingScreen: React.FC = () => {
       <div className="d-mb-none">
         <div className="corner top-left landing-page-logo">
           <a href="" className="image-glow">
-            <img src="/image/logo.svg" alt="logo" />
+            <Image width={100} height={100} src="/image/logo.svg" alt="logo" />
           </a>
         </div>
         <div className="corner bottom-left landing-page-content">
@@ -45,20 +45,25 @@ const LandingScreen: React.FC = () => {
           </a>
           <br />
           <a
-            className="landing-page-link landing-page-content glow"
-            href="https://docs.google.com/document/d/12flB-zl8DdPh-oXwoK9UIz9oSY6eOK42bqt92Tnn7Y0/edit?usp=sharing"
+            className="landing-page-link glow col"
+            href="public/content/hopsWhitePaper.pdf"
             target="_blank"
+            rel="noopener noreferrer"
           >
             White Paper
           </a>
         </div>
         <div className="corner bottom-right landing-page-content">
-          <img
+          <Image
+            width={100}
+            height={100}
             src="/image/hops-world.svg"
             alt="hops-world"
             className="game-logo image-glow"
           />
-          <img
+          <Image
+            width={100}
+            height={100}
             src="/image/hops-play.svg"
             alt="hops-play"
             className="game-logo image-glow landing-page-content"
@@ -78,7 +83,7 @@ const LandingScreen: React.FC = () => {
         >
           <div className="row landing-page-content">
             <a
-              href=""
+              href="#"
               className="landing-page-link glow col"
               onClick={handleShowModal}
             >
@@ -89,8 +94,9 @@ const LandingScreen: React.FC = () => {
             </a>
             <a
               className="landing-page-link glow col"
-              href="https://docs.google.com/document/d/12flB-zl8DdPh-oXwoK9UIz9oSY6eOK42bqt92Tnn7Y0/edit?usp=sharing"
+              href="public/content/hopsWhitePaper.pdf"
               target="_blank"
+              rel="noopener noreferrer"
             >
               White Paper
             </a>
