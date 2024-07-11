@@ -3,6 +3,27 @@
   color: white;
 }
 
+.modal-footer-custom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.speaker-icon {
+  margin-right: auto;
+}
+
+.speaker-icon {
+  padding: 5px;
+  border-radius: 50%;
+  bottom: 20px;
+  left: 20px;
+  cursor: pointer;
+  font-size: 24px;
+  color: black;
+}
+
 .nav-link {
   color: white;
 }

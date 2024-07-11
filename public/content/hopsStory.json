@@ -1,6 +1,7 @@
 {
   "chapters": [
     {
+      "audio": "/public/content/audio/Chapter1.mp3",
       "header": "Chapter 1",
       "title": "Chapter 1: The Birth of Hops World",
       "contentLines": [
