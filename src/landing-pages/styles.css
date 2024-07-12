@@ -7,6 +7,11 @@
   transition: white 5s ease;
 }
 
+body {
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
 @keyframes blink {
   0% {
     opacity: 1;
@@ -302,4 +307,20 @@
   filter: drop-shadow(0 0 2px rgba(255, 255, 255, 0.8))
     drop-shadow(0 0 6px rgba(255, 255, 255, 0.6))
     drop-shadow(0 0 8px rgba(255, 255, 255, 0.4));
+}
+
+.cloud-fragment-1 {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  background: url("/image/cloud-1.png") no-repeat center center;
+  background-size: cover;
+}
+
+.cloud-fragment-2 {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  background: url("/image/cloud-2.png") no-repeat center center;
+  background-size: cover;
 }
