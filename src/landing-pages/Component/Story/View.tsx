@@ -15,11 +15,15 @@ const HopsStoryModal: React.FC<HopsStoryModalProps> = ({
   handleClose,
 }) => {
   const [isMuted, setIsMuted] = useState(false);
+  const [currentAudio, setCurrentAudio] = useState<string>(
+    hopsStory.chapters[0].audio
+  );
   const audioRef = useRef<HTMLAudioElement>(null);
 
   useEffect(() => {
     if (show && audioRef.current) {
       audioRef.current.play();
+      audioRef.current.volume = 0.2;
     } else if (audioRef.current) {
       audioRef.current.pause();
     }
@@ -29,12 +33,19 @@ const HopsStoryModal: React.FC<HopsStoryModalProps> = ({
         audioRef.current.pause();
       }
     };
-  }, [show]);
+  }, [show, currentAudio]);
 
   const toggleMute = () => {
     if (audioRef.current) {
       audioRef.current.muted = !audioRef.current.muted;
       setIsMuted(audioRef.current.muted);
+    }
+  };
+
+  const handleSelect = (key: string | null) => {
+    if (key !== null) {
+      const chapterIndex = parseInt(key, 10);
+      setCurrentAudio(hopsStory.chapters[chapterIndex].audio);
     }
   };
 
@@ -45,14 +56,17 @@ const HopsStoryModal: React.FC<HopsStoryModalProps> = ({
           <Modal.Title>Hops Story</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <Tabs defaultActiveKey="0" id="hops-story-tabs">
+          <Tabs
+            defaultActiveKey="0"
+            id="hops-story-tabs"
+            onSelect={handleSelect}
+          >
             {hopsStory.chapters.map((chapter, index) => (
               <Tab
                 eventKey={index.toString()}
                 title={chapter.header}
                 key={index}
               >
-                <audio ref={audioRef} src={`${chapter.audio}`} loop />
                 <div className="modal-title mt-4 mb-2">{chapter.title}</div>
                 {chapter.contentLines.map((line, i) => (
                   <React.Fragment key={i}>
@@ -65,6 +79,7 @@ const HopsStoryModal: React.FC<HopsStoryModalProps> = ({
           </Tabs>
         </Modal.Body>
         <Modal.Footer className="modal-footer-custom">
+          <audio ref={audioRef} src={`/content/audio/${currentAudio}`} loop />
           <div className="btn speaker-icon" onClick={toggleMute}>
             <FontAwesomeIcon icon={isMuted ? faVolumeMute : faVolumeUp} />
           </div>
