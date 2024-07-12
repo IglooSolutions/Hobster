@@ -46,7 +46,7 @@ const LandingScreen: React.FC = () => {
           <br />
           <a
             className="landing-page-link glow col"
-            href="public/content/hopsWhitePaper.pdf"
+            href="/content/Hops-Whitepaper.pdf"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -94,7 +94,7 @@ const LandingScreen: React.FC = () => {
             </a>
             <a
               className="landing-page-link glow col"
-              href="public/content/hopsWhitePaper.pdf"
+              href="/content/Hops-Whitepaper.pdf"
               target="_blank"
               rel="noopener noreferrer"
             >
