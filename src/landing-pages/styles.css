@@ -315,6 +315,7 @@ body {
   height: 30vh;
   background: url("/image/cloud-1.png") no-repeat center center;
   background-size: cover;
+  z-index: 100;
 }
 
 .cloud-fragment-2 {
@@ -323,4 +324,5 @@ body {
   height: 30vh;
   background: url("/image/cloud-2.png") no-repeat center center;
   background-size: cover;
+  z-index: 100;
 }

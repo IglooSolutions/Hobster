@@ -11,7 +11,7 @@ const StartScreen: React.FC<StartScreenProps> = ({
   gameName,
   setShowLandingPage,
 }) => {
-  const [countdown, setCountdown] = useState(5);
+  const [countdown, setCountdown] = useState(8);
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -46,6 +46,10 @@ const StartScreen: React.FC<StartScreenProps> = ({
     }),
   };
 
+  const handleLogoClick = () => {
+    setShowLandingPage(true);
+  };
+
   return (
     <motion.div
       className="start-background"
@@ -71,7 +75,7 @@ const StartScreen: React.FC<StartScreenProps> = ({
         </motion.div>
       ))}
 
-      <a href="" className="image-glow landing-page-logo">
+      <a className="image-glow landing-page-logo" onClick={handleLogoClick}>
         <Image width={100} height={100} src="/image/logo.svg" alt="logo" />
       </a>
     </motion.div>
