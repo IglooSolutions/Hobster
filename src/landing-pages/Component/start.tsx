@@ -36,6 +36,14 @@ const StartScreen: React.FC<StartScreenProps> = ({
         ease: "easeInOut",
       },
     },
+    move: (i: number) => ({
+      x: i % 2 === 0 ? -400 : 400,
+      y: i % 2 === 0 ? -200 : 200,
+      transition: {
+        duration: 5,
+        ease: "easeInOut",
+      },
+    }),
   };
 
   return (
@@ -46,15 +54,26 @@ const StartScreen: React.FC<StartScreenProps> = ({
       exit="exit"
       variants={cloudVariants}
     >
-      <motion.div className="cloud-fragment-1" variants={cloudVariants} />
-      <motion.div className="cloud-fragment-2" variants={cloudVariants} />
-      <motion.div className="cloud-fragment-1" variants={cloudVariants} />
+      {[...Array(8)].map((_, i) => (
+        <motion.div
+          key={i}
+          className={`cloud-fragment-${(i % 2) + 1}`}
+          variants={cloudVariants}
+          custom={i}
+          animate="move"
+        >
+          <Image
+            width={100}
+            height={100}
+            src={`/image/cloud-${(i % 2) + 1}.png`}
+            alt={`cloud-${(i % 2) + 1}`}
+          />
+        </motion.div>
+      ))}
 
       <a href="" className="image-glow landing-page-logo">
         <Image width={100} height={100} src="/image/logo.svg" alt="logo" />
       </a>
-
-      {/* <div className="countdown">{countdown}</div> */}
     </motion.div>
   );
 };
